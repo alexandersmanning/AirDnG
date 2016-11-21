@@ -1,0 +1,30 @@
+{
+  "name": "AirDnG",
+  "version": "1.0.0",
+  "description": "## About AirDnG provides data visualization of common words and phrased used in AirBnB posts, using the D3 library to create different graphs based on neighborhood and area",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandersmanning/AirDnG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandersmanning/AirDnG/issues"
+  },
+  "homepage": "https://github.com/alexandersmanning/AirDnG#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "csv": "^1.1.0",
+    "csv-parse": "^1.1.7",
+    "d3": "^4.3.0",
+    "lodash": "^4.17.2",
+    "webpack": "^1.13.3"
+  }
+}
