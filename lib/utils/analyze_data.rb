@@ -1,4 +1,5 @@
 require 'csv'
+require 'json'
 require 'byebug'
 
 IGNORE_WORDS = {
@@ -122,7 +123,23 @@ IGNORE_WORDS = {
  "'s"=>true,
  "dishwasher"=>true,
  "+"=>true,
- "i'll"=>true
+ "i'll"=>true,
+ "it's"=> true,
+ "right" => true,
+ "san francisco"=> true,
+ "sf" => true,
+ "kitchen" => true,
+ "beds" => true,
+ "sleeps"=> true,
+ "4" => true,
+ "floors"=>true,
+ "closet"=> true,
+ "guest" => true,
+ "free"=>true,
+ "rooms"=>true,
+ "need"=>true,
+ "some"=>true,
+ "equipped"=>true
 }
 
 PHRASES = [
@@ -132,10 +149,17 @@ PHRASES = [
   "the mission",
   "walking distance",
   "ocean beach",
+  "legion of honor",
   "lands end",
   "the presidio",
   "gg bridge",
-  "gg park"
+  "gg park",
+  "cole valley",
+  "dolores park",
+  "fisherman's wharf",
+  "cable car",
+  "noe valley",
+  "the castro"
 ]
 
 def parse_file(file_name)
@@ -149,22 +173,57 @@ def parse_file(file_name)
 end
 
 def description_to_dictionary(listings)
-  word_set = Hash.new(0)
+  word_list = Hash.new() { |h,k| h[k] = Hash.new(0) }
 
   listings.each do |entry|
-    next if entry[:description].nil?
+    next if entry[:description].nil? || entry[:neighbourhood_cleansed].nil?
     entry_description = clean_text(entry[:description])
-    reg =Regexp.new("(#{PHRASES.join('|')})|\s+")
+    neighborhood = entry[:neighbourhood_cleansed]
+
+    word_list[neighborhood][neighborhood] += 1
+
+    reg = Regexp.new("(#{PHRASES.join('|')})|\s+")
     entry_description.split(reg)
                      .delete_if(&:empty?)
                      .each do |word|
-      word_set[word] += 1 unless IGNORE_WORDS[word]
+      next if IGNORE_WORDS[word]
+      word_list[neighborhood][word] += 1
+    end
+  end
+  #how do I get the number of ads?!
+  word_list
+end
+
+def convert_to_list_nodes(word_set, limit)
+  nodes = Hash.new() { |h,k| h[k] = {count: 0} }
+  links = []
+
+  word_set.keys.each do |neighborhood|
+    word_set[neighborhood].sort_by { |_,v| v }
+      .reverse.each_with_index do |word_list, idx|
+      break if idx == limit
+      word = word_list[0]
+      count = word_list[1]
+
+      nodes[word][:count] += count
+      nodes[word][:id] ||= word
+      links.push({source: word, target: neighborhood, count: count}) unless word == neighborhood
     end
   end
 
-  word_set
+  return [nodes, links]
 end
 
 def clean_text(entry_description)
-  entry_description.gsub(/[\.\,\:\-\/]+/,'').downcase
+  entry_description.gsub(/[\.\,\:\-\/\(\)\!\?]+/,'').downcase
 end
+
+def write_file(word_list)
+  File.open('../../assets/data_sets/words_test.json', 'w' ) do |f|
+    word_set = { nodes: word_list[0].values, links: word_list[1] }
+    f.write(word_set.to_json)
+  end
+end
+
+
+## Things to consider: times they mention themselves vs times they mention other neighborhoods
