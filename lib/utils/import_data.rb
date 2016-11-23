@@ -174,7 +174,8 @@ PHRASES = [
   "short term",
   "union square",
   "lower haight",
-  "caltrain station"
+  "caltrain station",
+  "city center"
 ]
 
 def parse_file(file_name)

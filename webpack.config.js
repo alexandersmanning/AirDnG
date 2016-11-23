@@ -15,6 +15,10 @@ module.exports = {
           presets: ['es2015']
         },
       },
+      {
+        test: /\.json$/,
+        loader: 'raw-loader'
+      }
     ]
   },
   node: {
