@@ -1,7 +1,7 @@
 node_modules
-./assets/data/test_data.csv
-./assets/data/test_data_airbnb.csv
-./assets/data_sets/test.json
-./assets/data_sets/words_test.json
-./lib/utils/.byebug_history
-./lib/utils/analyze_data.js
+assets/data/test_data.csv
+assets/data/test_data_airbnb.csv
+assets/data_sets/test.json
+assets/data_sets/words_test.json
+lib/utils/.byebug_history
+lib/utils/analyze_data.js
