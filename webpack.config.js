@@ -8,11 +8,11 @@ module.exports = {
     module: {
     loaders: [
       {
-        test: [/\.js?$/, /\.csv$/],
+        test: [/\.js?$/, /\.jsx?$/],
         exclude: /(node_modules)/,
         loader: 'babel',
         query: {
-          presets: ['es2015']
+          presets: ['react', 'es2015']
         },
       },
       {
@@ -21,11 +21,8 @@ module.exports = {
       }
     ]
   },
-  node: {
-    fs: "empty"
-  },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   }
 };
