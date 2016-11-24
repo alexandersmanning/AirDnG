@@ -253,5 +253,3 @@ def write_word_list(word_list, file_location)
     f.write(word_list.to_json)
   end
 end
-
-## Things to consider: times they mention themselves vs times they mention other neighborhoods
