@@ -8,24 +8,25 @@ module.exports = {
     module: {
     loaders: [
       {
-        test: [/\.js?$/, /\.csv$/],
+        test: [/\.js?$/, /\.jsx?$/],
         exclude: /(node_modules)/,
         loader: 'babel',
         query: {
-          presets: ['es2015']
+          presets: ['react', 'es2015']
         },
       },
       {
         test: /\.json$/,
         loader: 'raw-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   },
-  node: {
-    fs: "empty"
-  },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   }
 };
