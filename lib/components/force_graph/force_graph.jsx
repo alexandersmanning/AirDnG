@@ -26,8 +26,6 @@ class ForceGraph extends React.Component {
 		}
 		return (
 			<svg>
-				<g className='links'></g>
-				<g className='nodes'></g>
 			</svg>
 		)
 	}

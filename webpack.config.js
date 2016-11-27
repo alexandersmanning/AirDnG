@@ -18,6 +18,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'raw-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   },
