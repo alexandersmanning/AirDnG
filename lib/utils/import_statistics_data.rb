@@ -83,5 +83,3 @@ def write_list(list, file_location)
   end
 end
 
-
-#average_price: 0, median_price: 0, twenty_fifth:0, seventy_fifth: 0, std_dev:0

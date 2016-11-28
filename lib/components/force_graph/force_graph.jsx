@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { createForceGraph } from '../../utils/d3_force_graph'
 
-import * as d3 from 'd3';
-let d3tip = require('d3-tip')(d3);
-
 class ForceGraph extends React.Component {
 	constructor(props) {
 		super(props)
