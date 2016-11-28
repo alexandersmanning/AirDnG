@@ -196,7 +196,8 @@ PHRASES = [
   "cow palace",
   "for mason",
   "cow hollow",
-  "palace of fine arts"
+  "palace of fine arts",
+  "nob hill"
 ]
 
 def parse_file(file_name)
@@ -231,43 +232,10 @@ def description_to_dictionary(listings)
   word_list
 end
 
-# def convert_to_list_nodes(word_set, limit)
-#   nodes = Hash.new() { |h,k| h[k] = {count: 0, neighborhood: {} }}
-#   links = []
-
-#   word_set.keys.each do |neighborhood|
-#     word_set[neighborhood].sort_by { |_,v| v }
-#       .reverse.each_with_index do |word_list, idx|
-#       break if idx == limit
-#       word = word_list[0]
-#       count = word_list[1]
-
-#       nodes[word][:count] += count
-#       nodes[word][:id] ||= word
-#       # get the count of words per neighborhood
-#       nodes[word][:neighborhood][neighborhood] = count.to_f / word_set[neighborhood][neighborhood]
-
-#       links.push({source: word, target: neighborhood, count: count}) unless word == neighborhood
-#     end
-#   end
-#   return [nodes, links]
-# end
-
-# def get_neighborhoods(word_set, neighborhood_list)
-#   word_set.select { |k,v| neighborhood_list.include?(k) }
-# end
-
-
 def clean_text(entry_description)
   entry_description.gsub(/[\.\,\:\-\/\(\)\!\?]+/,'').downcase
 end
 
-# def write_file(word_list, file_location)
-#   File.open(file_location, 'w' ) do |f|
-#     word_set = { nodes: word_list[0].values, links: word_list[1] }
-#     f.write(word_set.to_json)
-#   end
-# end
 
 def write_word_list(word_list, file_location)
   File.open(file_location, 'w' ) do |f|
