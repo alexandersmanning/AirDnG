@@ -93,7 +93,7 @@
     }
     text.value {
         font-size: 120%;
-        fill: white;
+        /*fill: white;*/
     }
 
     .axisHorizontal path{
@@ -106,6 +106,26 @@
     }
 
     .bar {
-        fill: steelblue;
         fill-opacity: .9;
+    }
+
+    text.label {
+      font-size: 80%;
+    }
+
+    .stats-container {
+      text-align: center
+    }
+
+    .neighborhood-list {
+      list-style: none;
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+
+    .stats-item-data {
+      display: inline-block;
+      margin: 10px;
+      float: center;
     }

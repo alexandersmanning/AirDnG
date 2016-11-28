@@ -22,7 +22,6 @@ class IndividualStats extends React.Component {
 			<div className="individual-stats-container">
 				<svg ref="bargraph">
 				</svg>
-				<p>{JSON.stringify(this.props.stats)}</p>
 			</div>
 			)
 	}
