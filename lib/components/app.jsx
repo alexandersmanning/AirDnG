@@ -9,9 +9,17 @@ const App = () => {
 			<header className="main-nav-bar">
 				<h1 className="header-logo">AirDnG</h1>
 			</header>
-			<FilterSelectorContainer/>
-			<ForceGraphContainer />
-			<NeighborhoodStatsContainer />
+			<aside className="sidebar">
+				<div className="filter-container">
+					<span className="filter-label">filter by neighborhood</span>
+					<FilterSelectorContainer/>
+				</div>
+				<NeighborhoodStatsContainer />
+			</aside>
+			<content className="main">
+				<h2 className="main-title">Common Words By Neighborhood</h2>
+				<ForceGraphContainer />
+			</content>
 		</div>
 	)
 };

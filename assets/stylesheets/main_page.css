@@ -1,3 +1,20 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+ul, li, h1, h2, h3, h4, span {
+  margin: 0;
+  padding: 0;
+  color: #5a5a5a;
+}
+
+
+.force-diagram {
+  width: 100%;
+  height: 100%;
+}
+
 .links line {
   stroke: #999;
   stroke-opacity: 0.6;
@@ -18,29 +35,6 @@
     font-size: 12px;
   }
 
-  /* Creates a small triangle extender for the toold3-tip */
-  .d3-tip:after {
-/*   box-sizing: border-box;
-    display: inline;
-    font-size: 10px;
-    width: 100%;
-    line-height: 1;
-    color: white;
-    content: "\25BC";
-    position: absolute;
-    text-align: center;
-    border: 1px solid lightgrey;*/
-    opacity: 0;
-  }
-
-  /* Style northward toold3-tips specifically */
-  .d3-tip.n:after {
-   /* margin: -2px 0 0 0;
-    top: 100%;
-    left: 0;*/
-
-  }
-
   .tool-tip-box {
   	position: absolute;
     bottom: 0;
@@ -50,7 +44,7 @@
     line-height: 16px;
     padding: 10px;
     border-radius: 3px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,.95);
     color: #000;
     box-shadow: 0 1px 5px rgba(0,0,0,0.4);
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
@@ -88,11 +82,12 @@
     }
 
     text {
-        font: 10px sans-serif;
+        font: 15px sans-serif;
         color: white;
     }
     text.value {
         font-size: 120%;
+        cursor: default;
         /*fill: white;*/
     }
 
@@ -106,26 +101,165 @@
     }
 
     .bar {
-        fill-opacity: .9;
+        fill-opacity: .95;
     }
 
     text.label {
       font-size: 80%;
+      cursor: default;
     }
 
-    .stats-container {
-      text-align: center
-    }
 
     .neighborhood-list {
       list-style: none;
       display: block;
-      text-align: center;
+      /*text-align: center;*/
       margin: auto;
     }
 
-    .stats-item-data {
-      display: inline-block;
-      margin: 10px;
-      float: center;
+    .graph-container {
+      width: 60%;
+      float: right
     }
+
+    .room-stats {
+      float: left;
+      width: 30%;
+      margin-left: 10px;
+      text-align: left;
+    }
+
+    .individual-stats-container::after{
+      display: block;
+      content: "";
+      clear: both;
+      /*justify-content: space-between;*/
+      /*display: inline-block;*/
+      /*margin: 10px;*/
+      /*float: center;*/
+    }
+
+.bar:hover .rect-bar{
+  fill: #006bcc;
+}
+
+.bar:hover .value{
+  fill: #FFFFFF;
+}
+
+.sidebar {
+  height: calc(100vh - 50px);
+  width: 29%;
+  float: right;
+  padding: 0;
+  border-left: lightgrey solid 1px;
+  /*overflow: scroll;*/
+  position: relative;
+}
+
+.bar-graph {
+  width: 95%;
+  float:left;
+}
+
+.main {
+  height: calc(100vh - 50px);
+  width: 70.9%;
+  float: left;
+  text-align: center;
+}
+
+.header-logo {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.main-nav-bar {
+  margin: 0;
+  height: 50px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.main-title {
+  position: fixed;
+  margin: auto;
+  top: 60px;
+  left: 10px;
+}
+
+.filter-container {
+  width: 100%;
+  /*background-color: #e6e6e6;*/
+  /*border-bottom: 1px solid lightgrey;*/
+  height: 130px;
+  position: absolute;
+  box-shadow: 0px 1px 3px #aaaaaa;
+  opacity: 0.8;
+
+}
+
+.Select {
+  width: 90%;
+  left: 10px;
+  right: 10px;
+  top: 30px;
+}
+
+.stats-container {
+  position: absolute;
+  top: 130px;
+  padding: 10px;
+  overflow: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /*background-color: #f5f5f5;*/
+}
+
+.filter-label {
+  position: relative;
+  top: 25px;
+  left: 12px;
+}
+
+.stats-lead-metric {
+  color: #4b4b4b;
+  font-size: 2em;
+  font-weight: 800;
+
+}
+
+.stats-title {
+  color: #4b4b4b;
+  font-size: 0.8em;
+  margin-bottom: 0.3em;
+}
+
+.stats-metric {
+  color: #4b4b4b;
+  font-size: 1.1em;
+  font-weight: bold;
+  /*margin-bottom: 1em;*/
+}
+
+.neighborhood-name {
+  margin-top: 15px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.stats-item-data {
+  margin-bottom: 25px;
+}
+
+.graph-title {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.stats-container-title {
+  margin-left: 10px;
+  margin-bottom: 15px;
+}

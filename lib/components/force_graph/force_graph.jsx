@@ -22,7 +22,7 @@ class ForceGraph extends React.Component {
 			this.props.getWordList();
 		}
 		return (
-			<svg>
+			<svg className="force-diagram">
 			</svg>
 		)
 	}

@@ -18,6 +18,8 @@ class FilterSelector extends React.Component {
 
 	componentDidMount() {
 		this.updateRemoveButton();
+		let neighborhoods = this.state["selected"].map(el => el.value)
+			this.props.updateNeighborhood(neighborhoods)
 	}
 
 	updateRemoveButton() {

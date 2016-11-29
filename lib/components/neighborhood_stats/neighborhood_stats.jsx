@@ -7,19 +7,19 @@ class NeighborhoodStats extends React.Component {
 	}
 
 	render() {
-		if (Object.keys(this.props.statsList).length === 0) {
-			this.props.getStatsList();
-		}
+		// if (Object.keys(this.props.statsList).length === 0) {
+		// 	this.props.getStatsList();
+		// }
 
 		return (
 			<div className="stats-container">
-				<h1>Neighborhood Stats</h1>
+				<h1 className="stats-container-title">Statistics by Neighborhood</h1>
 				<ul className="neighborhood-list">
 				{
 					Object.keys(this.props.statsList).map( el => {
 						return( 
 							<li className="stats-item-data">
-								<h2>{el}</h2>
+								<h2 className="neighborhood-name">{el}</h2>
 								<IndividualStats stats={this.props.statsList[el]}/>
 							</li>
 							)

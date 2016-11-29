@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import StatsBlock from './stats_block'
 import { createSidewaysGraph } from '../../utils/d3_side_ways';
 
 class IndividualStats extends React.Component {
@@ -18,11 +19,16 @@ class IndividualStats extends React.Component {
 	}
 
 	render() {
+		let stats = this.props.stats
 		return (
 			<div className="individual-stats-container">
-				<svg ref="bargraph">
-				</svg>
-			</div>
+				<div className="graph-container">
+					<h3 className="graph-title">Room Type</h3>
+					<svg ref="bargraph" className="bar-graph">
+					</svg>
+				</div>
+				<StatsBlock stats={stats}/>
+			</div>	
 			)
 	}
 };
