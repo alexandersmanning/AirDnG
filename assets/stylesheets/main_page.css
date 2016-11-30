@@ -167,6 +167,7 @@ ul, li, h1, h2, h3, h4, span {
   width: 67%;
   float: left;
   text-align: center;
+  position: relative; 
 }
 
 .header-logo {
@@ -325,9 +326,10 @@ ul, li, h1, h2, h3, h4, span {
 }
 
 .force-legend {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  display: inline;
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
 }
 
 .axisHorizontal-legend text {
@@ -352,11 +354,16 @@ ul, li, h1, h2, h3, h4, span {
 }
 
 .force-title {
-  position: fixed;
-  top: 95px;
-  left: 10px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
 }
 
-.force-legend {
-  margin-left: 10px;
+@media all and (max-width: 1000px) {
+  .main {
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+  }
 }

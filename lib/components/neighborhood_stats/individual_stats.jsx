@@ -9,6 +9,7 @@ class IndividualStats extends React.Component {
 	}
 
 	componentDidMount() {
+		window.addEventListener('resize', () => this.forceUpdate())
 		if (Object.keys(this.props.stats).length !== 0) {
 			createSidewaysGraph(this.props.stats, ReactDOM.findDOMNode(this.refs.bargraph))
 		}

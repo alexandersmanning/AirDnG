@@ -8,6 +8,7 @@ class ForceGraph extends React.Component {
 	}
 
 	componentDidMount() {
+		window.addEventListener('resize', () => this.forceUpdate())
 		if (Object.keys(this.props.wordList).length !== 0) {
 			createForceGraph(this.props.wordList, ReactDOM.findDOMNode(this))
 		}
