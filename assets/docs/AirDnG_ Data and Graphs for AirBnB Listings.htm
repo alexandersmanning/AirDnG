@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///Users/alexandermanning/Documents/AirDnG/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>AirDnG: Data and Graphs for AirBnB Listings</title>
+	<script type="text/javascript" src="./AirDnG_ Data and Graphs for AirBnB Listings_files/bundle.js"></script><style type="text/css">/**
+ * React Select
+ * ============
+ * Created by Jed Watson and Joss Mackison for KeystoneJS, http://www.keystonejs.com/
+ * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
+ * MIT License: https://github.com/JedWatson/react-select
+*/
+.Select {
+  position: relative;
+}
+.Select,
+.Select div,
+.Select input,
+.Select span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Select.is-disabled > .Select-control {
+  background-color: #f9f9f9;
+}
+.Select.is-disabled > .Select-control:hover {
+  box-shadow: none;
+}
+.Select.is-disabled .Select-arrow-zone {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.Select-control {
+  background-color: #fff;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: default;
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: 36px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.Select-control:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.Select-control .Select-input:focus {
+  outline: none;
+}
+.is-searchable.is-open > .Select-control {
+  cursor: text;
+}
+.is-open > .Select-control {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #fff;
+  border-color: #b3b3b3 #ccc #d9d9d9;
+}
+.is-open > .Select-control > .Select-arrow {
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+}
+.is-searchable.is-focused:not(.is-open) > .Select-control {
+  cursor: text;
+}
+.is-focused:not(.is-open) > .Select-control {
+  border-color: #007eff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+}
+.Select-placeholder,
+.Select--single > .Select-control .Select-value {
+  bottom: 0;
+  color: #aaa;
+  left: 0;
+  line-height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.has-value.Select--single > .Select-control .Select-value .Select-value-label,
+.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+  color: #333;
+}
+.has-value.Select--single > .Select-control .Select-value a.Select-value-label,
+.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label {
+  cursor: pointer;
+  text-decoration: none;
+}
+.has-value.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.has-value.Select--single > .Select-control .Select-value a.Select-value-label:focus,
+.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:focus {
+  color: #007eff;
+  outline: none;
+  text-decoration: underline;
+}
+.Select-input {
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.Select-input > input {
+  width: 100%;
+  background: none transparent;
+  border: 0 none;
+  box-shadow: none;
+  cursor: default;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+  line-height: 14px;
+  /* For IE 8 compatibility */
+  padding: 8px 0 12px;
+  /* For IE 8 compatibility */
+  -webkit-appearance: none;
+}
+.is-focused .Select-input > input {
+  cursor: text;
+}
+.has-value.is-pseudo-focused .Select-input {
+  opacity: 0;
+}
+.Select-control:not(.is-searchable) > .Select-input {
+  outline: none;
+}
+.Select-loading-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 16px;
+}
+.Select-loading {
+  -webkit-animation: Select-animation-spin 400ms infinite linear;
+  -o-animation: Select-animation-spin 400ms infinite linear;
+  animation: Select-animation-spin 400ms infinite linear;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-right-color: #333;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.Select-clear-zone {
+  -webkit-animation: Select-animation-fadeIn 200ms;
+  -o-animation: Select-animation-fadeIn 200ms;
+  animation: Select-animation-fadeIn 200ms;
+  color: #999;
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 17px;
+}
+.Select-clear-zone:hover {
+  color: #D0021B;
+}
+.Select-clear {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+}
+.Select--multi .Select-clear-zone {
+  width: 17px;
+}
+.Select-arrow-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  padding-right: 5px;
+}
+.Select-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 2.5px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+}
+.is-open .Select-arrow,
+.Select-arrow-zone:hover > .Select-arrow {
+  border-top-color: #666;
+}
+.Select--multi .Select-multi-value-wrapper {
+  display: inline-block;
+}
+.Select .Select-aria-only {
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+@-webkit-keyframes Select-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes Select-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Select-menu-outer {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top-color: #e6e6e6;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+.Select-menu {
+  max-height: 198px;
+  overflow-y: auto;
+}
+.Select-option {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #666666;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+}
+.Select-option:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.Select-option.is-selected {
+  background-color: #f5faff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.04);
+  color: #333;
+}
+.Select-option.is-focused {
+  background-color: #ebf5ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.08);
+  color: #333;
+}
+.Select-option.is-disabled {
+  color: #cccccc;
+  cursor: default;
+}
+.Select-noresults {
+  box-sizing: border-box;
+  color: #999999;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}
+.Select--multi .Select-input {
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 0;
+}
+.Select--multi.has-value .Select-input {
+  margin-left: 5px;
+}
+.Select--multi .Select-value {
+  background-color: #ebf5ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.08);
+  border-radius: 2px;
+  border: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border: 1px solid rgba(0, 126, 255, 0.24);
+  color: #007eff;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-left: 5px;
+  margin-top: 5px;
+  vertical-align: top;
+}
+.Select--multi .Select-value-icon,
+.Select--multi .Select-value-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+.Select--multi .Select-value-label {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  cursor: default;
+  padding: 2px 5px;
+}
+.Select--multi a.Select-value-label {
+  color: #007eff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Select--multi a.Select-value-label:hover {
+  text-decoration: underline;
+}
+.Select--multi .Select-value-icon {
+  cursor: pointer;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-right: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border-right: 1px solid rgba(0, 126, 255, 0.24);
+  padding: 1px 5px 3px;
+}
+.Select--multi .Select-value-icon:hover,
+.Select--multi .Select-value-icon:focus {
+  background-color: #d8eafd;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 113, 230, 0.08);
+  color: #0071e6;
+}
+.Select--multi .Select-value-icon:active {
+  background-color: #c2e0ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.24);
+}
+.Select--multi.is-disabled .Select-value {
+  background-color: #fcfcfc;
+  border: 1px solid #e3e3e3;
+  color: #333;
+}
+.Select--multi.is-disabled .Select-value-icon {
+  cursor: not-allowed;
+  border-right: 1px solid #e3e3e3;
+}
+.Select--multi.is-disabled .Select-value-icon:hover,
+.Select--multi.is-disabled .Select-value-icon:focus,
+.Select--multi.is-disabled .Select-value-icon:active {
+  background-color: #fcfcfc;
+}
+@keyframes Select-animation-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-webkit-keyframes Select-animation-spin {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+</style>
+	<link rel="stylesheet" type="text/css" href="./AirDnG_ Data and Graphs for AirBnB Listings_files/main_page.css">
+</head>
+<body>
+	<div id="root"><div data-reactroot="" class="main-container"><header class="main-nav-bar"><div class="nav-bar-logo"><h1 class="header-logo">AirDnG</h1><span class="sub-logo">Data and Graphs for San Francisco</span></div><div class="header-modals"><section><span class="about-header">About</span><noscript></noscript></section></div></header><aside class="sidebar"><div class="filter-container"><span class="filter-label">filter by neighborhood</span><div class="Select Select--multi is-searchable has-value"><input type="hidden" name="form-field-name" value="Haight Ashbury"><input type="hidden" name="form-field-name" value="Mission"><input type="hidden" name="form-field-name" value="Chinatown"><div class="Select-control"><span class="Select-multi-value-wrapper" id="react-select-2--value"><div class="Select-value"><span class="Select-value-icon" aria-hidden="true">x</span><span class="Select-value-label" role="option" aria-selected="true" id="react-select-2--value-0"><!-- react-text: 22 -->Haight Ashbury<!-- /react-text --><span class="Select-aria-only">Â&nbsp;</span></span></div><div class="Select-value"><span class="Select-value-icon" aria-hidden="true">x</span><span class="Select-value-label" role="option" aria-selected="true" id="react-select-2--value-1"><!-- react-text: 27 -->Mission<!-- /react-text --><span class="Select-aria-only">Â&nbsp;</span></span></div><div class="Select-value"><span class="Select-value-icon" aria-hidden="true">x</span><span class="Select-value-label" role="option" aria-selected="true" id="react-select-2--value-2"><!-- react-text: 32 -->Chinatown<!-- /react-text --><span class="Select-aria-only">Â&nbsp;</span></span></div><div class="Select-input" style="display: inline-block;"><input role="combobox" aria-expanded="false" aria-owns="" aria-haspopup="false" aria-activedescendant="react-select-2--value" value="" style="box-sizing: content-box; width: 2px;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: sans-serif; font-weight: normal; font-style: normal; letter-spacing: normal;"></div></div></span><span class="Select-clear-zone" title="Clear all" aria-label="Clear all"><span class="Select-clear">×</span></span><span class="Select-arrow-zone"><span class="Select-arrow"></span></span></div></div></div><div class="stats-container"><h1 class="stats-container-title">Statistics by Neighborhood</h1><ul class="neighborhood-list"><li class="stats-item-data"><h2 class="neighborhood-name">Haight Ashbury</h2><div class="individual-stats-container"><div class="graph-container"><h3 class="graph-title">Listing by House/Room Type</h3><svg class="bar-graph" height="142.20000000000002"><g class="axisHorizontal" transform="translate(77,122.20000000000002)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-138V0.5H138.5V-138"></path><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">0</text></g><g class="tick" opacity="1" transform="translate(27.6,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">20</text></g><g class="tick" opacity="1" transform="translate(55.2,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">40</text></g><g class="tick" opacity="1" transform="translate(82.8,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">60</text></g><g class="tick" opacity="1" transform="translate(110.4,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">80</text></g><g class="tick" opacity="1" transform="translate(138,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">100</text></g></g><g class="bar" cx="0" transform="translate(0,24.44)"><text class="label" y="8.146666666666668" dy=".35em">entire house</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="74.52000000000001" fill="rgb(255, 117, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="74.52000000000001" fill="#00000">54%</text></g><g class="bar" cx="0" transform="translate(0,65.17333333333333)"><text class="label" y="8.146666666666668" dy=".35em">private room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="57.96" fill="rgb(255, 148, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="57.96" fill="#00000">42%</text></g><g class="bar" cx="0" transform="translate(0,105.90666666666667)"><text class="label" y="8.146666666666668" dy=".35em">shared room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="2.7600000000000002" fill="rgb(255, 250, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="31.734375" fill="#00000">2%</text></g></svg></div><div class="room-stats"><div class="stats-lead-metric"><span class="stats-metric"><!-- react-text: 57 -->$<!-- /react-text --><!-- react-text: 58 -->257<!-- /react-text --></span></div><div class="stats-title"><span>Average Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 63 -->$<!-- /react-text --><!-- react-text: 64 -->175<!-- /react-text --></span></div><div class="stats-title"><span>Median Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 69 -->$<!-- /react-text --><!-- react-text: 70 -->103<!-- /react-text --><!-- react-text: 71 --> - $<!-- /react-text --><!-- react-text: 72 -->300<!-- /react-text --></span></div><div class="stats-title"><span>Rental Price Range</span></div><div class="stats-secondary-metric"><span class="stats-metric">439</span></div><div class="stats-title"><span>Number of Available Units</span></div></div></div></li><li class="stats-item-data"><h2 class="neighborhood-name">Mission</h2><div class="individual-stats-container"><div class="graph-container"><h3 class="graph-title">Listing by House/Room Type</h3><svg class="bar-graph" height="142.20000000000002"><g class="axisHorizontal" transform="translate(77,122.20000000000002)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-138V0.5H138.5V-138"></path><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">0</text></g><g class="tick" opacity="1" transform="translate(27.6,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">20</text></g><g class="tick" opacity="1" transform="translate(55.2,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">40</text></g><g class="tick" opacity="1" transform="translate(82.8,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">60</text></g><g class="tick" opacity="1" transform="translate(110.4,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">80</text></g><g class="tick" opacity="1" transform="translate(138,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">100</text></g></g><g class="bar" cx="0" transform="translate(0,24.44)"><text class="label" y="8.146666666666668" dy=".35em">entire house</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="70.38" fill="rgb(255, 125, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="70.38" fill="#00000">51%</text></g><g class="bar" cx="0" transform="translate(0,65.17333333333333)"><text class="label" y="8.146666666666668" dy=".35em">private room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="56.58" fill="rgb(255, 150, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="56.58" fill="#00000">41%</text></g><g class="bar" cx="0" transform="translate(0,105.90666666666667)"><text class="label" y="8.146666666666668" dy=".35em">shared room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="8.28" fill="rgb(255, 240, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="31.734375" fill="#00000">6%</text></g></svg></div><div class="room-stats"><div class="stats-lead-metric"><span class="stats-metric"><!-- react-text: 88 -->$<!-- /react-text --><!-- react-text: 89 -->218<!-- /react-text --></span></div><div class="stats-title"><span>Average Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 94 -->$<!-- /react-text --><!-- react-text: 95 -->150<!-- /react-text --></span></div><div class="stats-title"><span>Median Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 100 -->$<!-- /react-text --><!-- react-text: 101 -->100<!-- /react-text --><!-- react-text: 102 --> - $<!-- /react-text --><!-- react-text: 103 -->245<!-- /react-text --></span></div><div class="stats-title"><span>Rental Price Range</span></div><div class="stats-secondary-metric"><span class="stats-metric">1073</span></div><div class="stats-title"><span>Number of Available Units</span></div></div></div></li><li class="stats-item-data"><h2 class="neighborhood-name">Chinatown</h2><div class="individual-stats-container"><div class="graph-container"><h3 class="graph-title">Listing by House/Room Type</h3><svg class="bar-graph" height="142.20000000000002"><g class="axisHorizontal" transform="translate(77,122.20000000000002)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-138V0.5H138.5V-138"></path><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">0</text></g><g class="tick" opacity="1" transform="translate(27.6,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">20</text></g><g class="tick" opacity="1" transform="translate(55.2,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">40</text></g><g class="tick" opacity="1" transform="translate(82.8,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">60</text></g><g class="tick" opacity="1" transform="translate(110.4,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">80</text></g><g class="tick" opacity="1" transform="translate(138,0)"><line stroke="#000" y2="-138" x1="0.5" x2="0.5"></line><text fill="#000" y="3" x="0.5" dy="0.71em">100</text></g></g><g class="bar" cx="0" transform="translate(0,24.44)"><text class="label" y="8.146666666666668" dy=".35em">entire house</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="102.12" fill="rgb(255, 66, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="102.12" fill="#00000">74%</text></g><g class="bar" cx="0" transform="translate(0,65.17333333333333)"><text class="label" y="8.146666666666668" dy=".35em">private room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="23.46" fill="rgb(255, 212, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="42.421875" fill="#00000">17%</text></g><g class="bar" cx="0" transform="translate(0,105.90666666666667)"><text class="label" y="8.146666666666668" dy=".35em">shared room</text><rect class="rect-bar" transform="translate(77, 0)" height="16.293333333333337" width="11.040000000000001" fill="rgb(255, 235, 0)"></rect><text class="value" y="8.146666666666668" dx="73" dy=".35em" text-anchor="end" x="31.734375" fill="#00000">8%</text></g></svg></div><div class="room-stats"><div class="stats-lead-metric"><span class="stats-metric"><!-- react-text: 119 -->$<!-- /react-text --><!-- react-text: 120 -->297<!-- /react-text --></span></div><div class="stats-title"><span>Average Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 125 -->$<!-- /react-text --><!-- react-text: 126 -->179<!-- /react-text --></span></div><div class="stats-title"><span>Median Cost/Day</span></div><div class="stats-secondary-metric"><span class="stats-metric"><!-- react-text: 131 -->$<!-- /react-text --><!-- react-text: 132 -->116<!-- /react-text --><!-- react-text: 133 --> - $<!-- /react-text --><!-- react-text: 134 -->258<!-- /react-text --></span></div><div class="stats-title"><span>Rental Price Range</span></div><div class="stats-secondary-metric"><span class="stats-metric">110</span></div><div class="stats-title"><span>Number of Available Units</span></div></div></div></li></ul></div></aside><content class="main"><svg class="force-diagram"><g class="links"><line stroke-width="1" x1="105.12873721932249" y1="236.56394891555738" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="111.15098117099635" y1="198.00108164987233" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="356.8001766698871" y1="426.3524820540807" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="312.0239022463554" y1="350.6894039158188" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="327.22197958164674" y1="111.61527096290905" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="331.3067425709963" y1="384.8915946044778" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="341.4405972774013" y1="329.9740059541532" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="420.33089983919393" y1="337.1638335327065" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="279.65654128381846" y1="212.30407179559148" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="319.20738485587003" y1="149.20777143156252" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="276.3689741524293" y1="147.66479887018113" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="278.8621528884177" y1="360.61911575000534" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="359.61173142975946" y1="144.86105013047708" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="361.2905816203358" y1="237.55531653091236" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="371.3010190665795" y1="386.349666596745" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="405.6053228513373" y1="374.8026956513908" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="110.12735471395072" y1="266.82648536373756" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="367.61775924558225" y1="112.36303090701033" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="298.32517135159657" y1="184.47351902672912" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="127.87728563602364" y1="170.33471289308605" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="392.15690524903334" y1="178.85774240998123" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="267.2048904844952" y1="178.24767096009288" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="370.2852792216659" y1="351.60748328660395" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="358.4557406889683" y1="178.86319471065147" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="289.95594302956056" y1="120.20302381411206" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="395.32706107076984" y1="142.52994315434088" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="322.99187891290336" y1="247.13662269895096" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="149.57395274639265" y1="167.58347882701037" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="166.8323186566445" y1="158.1371266984813" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="126.17694518432548" y1="220.28528699329627" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="385.3072228058629" y1="322.05297673032976" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="326.89531226090025" y1="182.58161465333694" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="139.96072767586065" y1="195.6426868607061" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="425.50077999843626" y1="398.14635770452406" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="333.88835414560907" y1="213.73980305372166" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="237.97863274920593" y1="449.0892952229716" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="381.41809312590215" y1="209.13267568249978" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="277.8367024640554" y1="393.0161500060805" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="444.96884944284056" y1="362.3853684001101" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="298.584635489594" y1="409.4989156146987" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="148.84486575997173" y1="218.4762466122698" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="396.1583261068156" y1="420.44156051917156" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="255.49096059259568" y1="465.3613315465735" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="163.28659808864734" y1="191.65471213597692" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="319.68909074931645" y1="429.9040362425859" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="128.70652797667321" y1="286.90045411564523" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="137.82636138971526" y1="243.54085551331397" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="291.4644151548812" y1="245.60942365918197" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="138.47784290355588" y1="265.92099432361846" x2="217.92264006034205" y2="256.85784479721815"></line><line stroke-width="1" x1="577.6165057434988" y1="200.9145166477402" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="356.8001766698871" y1="426.3524820540807" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="561.7291786138719" y1="159.55311737500546" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="331.3067425709963" y1="384.8915946044778" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="525.8224280977007" y1="408.5660978933559" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="312.0239022463554" y1="350.6894039158188" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="420.33089983919393" y1="337.1638335327065" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="511.5039195407732" y1="445.0981633855358" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="361.2905816203358" y1="237.55531653091236" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="341.4405972774013" y1="329.9740059541532" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="327.22197958164674" y1="111.61527096290905" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="319.20738485587003" y1="149.20777143156252" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="279.65654128381846" y1="212.30407179559148" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="333.88835414560907" y1="213.73980305372166" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="278.8621528884177" y1="360.61911575000534" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="385.3072228058629" y1="322.05297673032976" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="371.3010190665795" y1="386.349666596745" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="405.6053228513373" y1="374.8026956513908" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="395.32706107076984" y1="142.52994315434088" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="575.6859563858657" y1="237.60284437892864" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="392.15690524903334" y1="178.85774240998123" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="543.2896174266172" y1="197.13828184146854" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="359.61173142975946" y1="144.86105013047708" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="358.4557406889683" y1="178.86319471065147" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="267.2048904844952" y1="178.24767096009288" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="367.61775924558225" y1="112.36303090701033" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="291.4644151548812" y1="245.60942365918197" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="532.1989411226131" y1="130.7478851590859" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="322.99187891290336" y1="247.13662269895096" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="493.1356987929454" y1="415.7334902631553" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="276.3689741524293" y1="147.66479887018113" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="370.2852792216659" y1="351.60748328660395" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="500.23075157582275" y1="155.18492526289353" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="444.96884944284056" y1="362.3853684001101" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="289.95594302956056" y1="120.20302381411206" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="319.68909074931645" y1="429.9040362425859" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="529.4056692563881" y1="162.0039304877102" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="553.161429015011" y1="253.76755462435648" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="298.584635489594" y1="409.4989156146987" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="298.32517135159657" y1="184.47351902672912" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="277.8367024640554" y1="393.0161500060805" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="425.50077999843626" y1="398.14635770452406" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="502.1286231945355" y1="127.67529156164487" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="396.1583261068156" y1="420.44156051917156" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="326.89531226090025" y1="182.58161465333694" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="381.41809312590215" y1="209.13267568249978" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="514.9127700264945" y1="187.99287802605232" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="538.9085704606606" y1="226.4899771941656" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="477.0193918199731" y1="446.74608343289475" x2="459.6953412343289" y2="239.98219229121062"></line><line stroke-width="1" x1="392.4387604412901" y1="651.8170181698582" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="448.54364503162356" y1="644.3155358172623" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="371.3010190665795" y1="386.349666596745" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="319.68909074931645" y1="429.9040362425859" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="356.8001766698871" y1="426.3524820540807" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="410.8972433517066" y1="643.3057268455734" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="371.4854720803007" y1="643.8030913111677" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="426.0870735317433" y1="654.1896845183974" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="477.0193918199731" y1="446.74608343289475" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="396.1583261068156" y1="420.44156051917156" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="375.43171173173863" y1="623.9491110071748" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="237.97863274920593" y1="449.0892952229716" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="466.84581270827454" y1="617.8790971589234" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="511.5039195407732" y1="445.0981633855358" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="432.981633001246" y1="631.4649021840527" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="353.9623723612219" y1="633.2345191806934" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="425.50077999843626" y1="398.14635770452406" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="468.05534378591085" y1="634.3610316813179" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="394.3145524969728" y1="629.4513906327753" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="255.49096059259568" y1="465.3613315465735" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="418.23518198239844" y1="623.4167420981272" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="448.2674635215428" y1="620.9238715010869" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="444.96884944284056" y1="362.3853684001101" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="353.7984575712261" y1="617.5101226015421" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="341.4405972774013" y1="329.9740059541532" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="484.7971813249617" y1="613.009191122198" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="277.8367024640554" y1="393.0161500060805" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="385.3072228058629" y1="322.05297673032976" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="493.1356987929454" y1="415.7334902631553" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="405.51659665615193" y1="611.8802544912536" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="476.12714210548245" y1="599.2656656085894" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="456.94992322327147" y1="601.9345673073495" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="370.2852792216659" y1="351.60748328660395" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="298.584635489594" y1="409.4989156146987" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="405.6053228513373" y1="374.8026956513908" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="421.8378130494874" y1="603.6694385441557" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="390.46201862215764" y1="605.9205444909561" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="437.1161120916578" y1="606.7443224571896" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="344.5053049366551" y1="605.3328185780923" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="420.33089983919393" y1="337.1638335327065" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="525.8224280977007" y1="408.5660978933559" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="312.0239022463554" y1="350.6894039158188" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="483.85468780903835" y1="586.236877215796" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="373.89045633117564" y1="606.4066471753239" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="278.8621528884177" y1="360.61911575000534" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="448.0414219135899" y1="589.7594993020903" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="466.54056206449525" y1="582.7154164867893" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="360.2375539102866" y1="599.024565338256" x2="404.48186656785344" y2="549.8247366201514"></line><line stroke-width="1" x1="331.3067425709963" y1="384.8915946044778" x2="404.48186656785344" y2="549.8247366201514"></line></g><g class="nodes"><circle r="11.19602251311201" fill="#006bcc" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="217.92264006034205" cy="256.85784479721815"><title>Haight Ashbury</title></circle><circle r="9.193425445442193" fill="rgb(255, 205, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="105.12873721932249" cy="236.56394891555738"><title>golden gate park</title></circle><circle r="8.893472929928611" fill="rgb(255, 208, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="111.15098117099635" cy="198.00108164987233"><title>haight</title></circle><circle r="17.722616730999405" fill="rgb(255, 68, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="356.8001766698871" cy="426.3524820540807"><title>apartment</title></circle><circle r="15.977184942392261" fill="rgb(255, 103, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="312.0239022463554" cy="350.6894039158188"><title>private</title></circle><circle r="14.378076369844331" fill="rgb(255, 132, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="327.22197958164674" cy="111.61527096290905"><title>large</title></circle><circle r="15.950355057899463" fill="rgb(255, 104, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="331.3067425709963" cy="384.8915946044778"><title>restaurants</title></circle><circle r="14.643721862634477" fill="rgb(255, 127, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="341.4405972774013" cy="329.9740059541532"><title>house</title></circle><circle r="15.292322695546645" fill="rgb(255, 116, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="420.33089983919393" cy="337.1638335327065"><title>home</title></circle><circle r="13.208457650586572" fill="rgb(255, 151, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="279.65654128381846" cy="212.30407179559148"><title>neighborhood</title></circle><circle r="13.110816789060015" fill="rgb(255, 153, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="319.20738485587003" cy="149.20777143156252"><title>great</title></circle><circle r="11.054863575647238" fill="rgb(255, 182, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="276.3689741524293" cy="147.66479887018113"><title>victorian</title></circle><circle r="12.88010991427748" fill="rgb(255, 156, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="278.8621528884177" cy="360.61911575000534"><title>guests</title></circle><circle r="11.670533040318809" fill="rgb(255, 174, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="359.61173142975946" cy="144.86105013047708"><title>flat</title></circle><circle r="13.883002100701239" fill="rgb(255, 140, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="361.2905816203358" cy="237.55531653091236"><title>space</title></circle><circle r="13.12170165335834" fill="rgb(255, 152, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="371.3010190665795" cy="386.349666596745"><title>walk</title></circle><circle r="12.520384758205354" fill="rgb(255, 162, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="405.6053228513373" cy="374.8026956513908"><title>city</title></circle><circle r="6.780230228781984" fill="rgb(255, 228, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="110.12735471395072" cy="266.82648536373756"><title>cole valley</title></circle><circle r="11.24691378680867" fill="rgb(255, 180, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="367.61775924558225" cy="112.36303090701033"><title>beautiful</title></circle><circle r="9.89643013328579" fill="rgb(255, 197, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="298.32517135159657" cy="184.47351902672912"><title>dining</title></circle><circle r="6.367598549669883" fill="rgb(255, 231, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="127.87728563602364" cy="170.33471289308605"><title>ashbury</title></circle><circle r="11.322821827998576" fill="rgb(255, 179, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="392.15690524903334" cy="178.85774240998123"><title>quiet</title></circle><circle r="10.885679695422558" fill="rgb(255, 184, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="267.2048904844952" cy="178.24767096009288"><title>spacious</title></circle><circle r="10.278562121042514" fill="rgb(255, 192, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="370.2852792216659" cy="351.60748328660395"><title>comfortable</title></circle><circle r="10.78024689901595" fill="rgb(255, 186, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="358.4557406889683" cy="178.86319471065147"><title>new</title></circle><circle r="9.633257814515554" fill="rgb(255, 200, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="289.95594302956056" cy="120.20302381411206"><title>shops</title></circle><circle r="11.373145728530739" fill="rgb(255, 178, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="395.32706107076984" cy="142.52994315434088"><title>bars</title></circle><circle r="10.11050891076913" fill="rgb(255, 194, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="322.99187891290336" cy="247.13662269895096"><title>garden</title></circle><circle r="5.527431787823619" fill="rgb(255, 237, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="149.57395274639265" cy="167.58347882701037"><title>perfect</title></circle><circle r="5.5015420352473905" fill="rgb(255, 237, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="166.8323186566445" cy="158.1371266984813"><title>bus</title></circle><circle r="5.475529870445873" fill="rgb(255, 237, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="126.17694518432548" cy="220.28528699329627"><title>nopa</title></circle><circle r="11.93663119649137" fill="rgb(255, 170, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="385.3072228058629" cy="322.05297673032976"><title>heart</title></circle><circle r="9.036796854329193" fill="rgb(255, 206, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="326.89531226090025" cy="182.58161465333694"><title>light</title></circle><circle r="5.289864415843" fill="rgb(255, 238, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="139.96072767586065" cy="195.6426868607061"><title>park</title></circle><circle r="9.543921191011112" fill="rgb(255, 201, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="425.50077999843626" cy="398.14635770452406"><title>public</title></circle><circle r="11.804331954122265" fill="rgb(255, 172, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="333.88835414560907" cy="213.73980305372166"><title>shared</title></circle><circle r="6.20866728578807" fill="rgb(255, 232, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="237.97863274920593" cy="449.0892952229716"><title>downtown</title></circle><circle r="8.845182222262354" fill="rgb(255, 208, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="381.41809312590215" cy="209.13267568249978"><title>muni</title></circle><circle r="9.528950325024367" fill="rgb(255, 201, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="277.8367024640554" cy="393.0161500060805"><title>walking distance</title></circle><circle r="9.867535385095357" fill="rgb(255, 197, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="444.96884944284056" cy="362.3853684001101"><title>size</title></circle><circle r="9.543921191011112" fill="rgb(255, 201, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="298.584635489594" cy="409.4989156146987"><title>parking</title></circle><circle r="5.097440898515548" fill="rgb(255, 240, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="148.84486575997173" cy="218.4762466122698"><title>views</title></circle><circle r="9.588693545555515" fill="rgb(255, 200, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="396.1583261068156" cy="420.44156051917156"><title>unit</title></circle><circle r="5.779954688709333" fill="rgb(255, 235, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="255.49096059259568" cy="465.3613315465735"><title>transportation</title></circle><circle r="5.012712988343937" fill="rgb(255, 240, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="163.28659808864734" cy="191.65471213597692"><title>haightashbury</title></circle><circle r="10.138711221927567" fill="rgb(255, 194, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="319.68909074931645" cy="429.9040362425859"><title>building</title></circle><circle r="4.955422958397597" fill="rgb(255, 240, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="128.70652797667321" cy="286.90045411564523"><title>fully</title></circle><circle r="4.955422958397597" fill="rgb(255, 240, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="137.82636138971526" cy="243.54085551331397"><title>deck</title></circle><circle r="10.222851346974288" fill="rgb(255, 193, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="291.4644151548812" cy="245.60942365918197"><title>modern</title></circle><circle r="4.838808436259695" fill="rgb(255, 241, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="138.47784290355588" cy="265.92099432361846"><title>panhandle</title></circle><circle r="17.495602204477787" fill="#006bcc" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="459.6953412343289" cy="239.98219229121062"><title>Mission</title></circle><circle r="15.000115796813436" fill="rgb(255, 121, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="577.6165057434988" cy="200.9145166477402"><title>the mission</title></circle><circle r="14.378076369844331" fill="rgb(255, 132, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="561.7291786138719" cy="159.55311737500546"><title>mission</title></circle><circle r="13.613000214442112" fill="rgb(255, 145, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="525.8224280977007" cy="408.5660978933559"><title>bart</title></circle><circle r="12.79112708780102" fill="rgb(255, 158, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="511.5039195407732" cy="445.0981633855358"><title>district</title></circle><circle r="9.513955901376304" fill="rgb(255, 201, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="575.6859563858657" cy="237.60284437892864"><title>valencia</title></circle><circle r="9.28613460173812" fill="rgb(255, 204, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="543.2896174266172" cy="197.13828184146854"><title>sunny</title></circle><circle r="8.51624920232176" fill="rgb(255, 212, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="532.1989411226131" cy="130.7478851590859"><title>dolores park</title></circle><circle r="8.698701737270051" fill="rgb(255, 210, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="493.1356987929454" cy="415.7334902631553"><title>coffee</title></circle><circle r="8.015355" fill="rgb(255, 217, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="500.23075157582275" cy="155.18492526289353"><title>backyard</title></circle><circle r="7.725109534552956" fill="rgb(255, 219, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="529.4056692563881" cy="162.0039304877102"><title>24th</title></circle><circle r="7.632144541581743" fill="rgb(255, 220, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="553.161429015011" cy="253.76755462435648"><title>people</title></circle><circle r="7.3461942018885535" fill="rgb(255, 223, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="502.1286231945355" cy="127.67529156164487"><title>clean</title></circle><circle r="7.109157503563484" fill="rgb(255, 225, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="514.9127700264945" cy="187.99287802605232"><title>many</title></circle><circle r="7.109157503563484" fill="rgb(255, 225, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="538.9085704606606" cy="226.4899771941656"><title>back</title></circle><circle r="7.943787897610875" fill="rgb(255, 217, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="477.0193918199731" cy="446.74608343289475"><title>studio</title></circle><circle r="5.604383496816577" fill="#006bcc" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="404.48186656785344" cy="549.8247366201514"><title>Chinatown</title></circle><circle r="4.658416325547128" fill="rgb(255, 242, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="392.4387604412901" cy="651.8170181698582"><title>union square</title></circle><circle r="4.5025721143452" fill="rgb(255, 243, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="448.54364503162356" cy="644.3155358172623"><title>chinatown</title></circle><circle r="3.8901776801062695" fill="rgb(255, 246, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="410.8972433517066" cy="643.3057268455734"><title>hill</title></circle><circle r="3.8533031258062214" fill="rgb(255, 246, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="371.4854720803007" cy="643.8030913111677"><title>resort</title></circle><circle r="3.8160722707908716" fill="rgb(255, 246, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="426.0870735317433" cy="654.1896845183974"><title>nob</title></circle><circle r="3.463029157379129" fill="rgb(255, 248, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="375.43171173173863" cy="623.9491110071748"><title>hotel</title></circle><circle r="3.293997773384493" fill="rgb(255, 249, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="466.84581270827454" cy="617.8790971589234"><title>amenities</title></circle><circle r="3.069647262116121" fill="rgb(255, 249, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="432.981633001246" cy="631.4649021840527"><title>financial</title></circle><circle r="3.022779666196" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="353.9623723612219" cy="633.2345191806934"><title>historic</title></circle><circle r="2.9751738616287615" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="468.05534378591085" cy="634.3610316813179"><title>microwave</title></circle><circle r="2.9267938266078803" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="394.3145524969728" cy="629.4513906327753"><title>cable car</title></circle><circle r="2.877600510845972" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="418.23518198239844" cy="623.4167420981272"><title>occupancy</title></circle><circle r="2.827551466653083" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="448.2674635215428" cy="620.9238715010869"><title>units</title></circle><circle r="2.7766004201402477" fill="rgb(255, 250, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="353.7984575712261" cy="617.5101226015421"><title>north</title></circle><circle r="2.724696770224899" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="484.7971813249617" cy="613.009191122198"><title>sofa</title></circle><circle r="2.671785" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="405.51659665615193" cy="611.8802544912536"><title>stockton</title></circle><circle r="2.671785" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="476.12714210548245" cy="599.2656656085894"><title>each</title></circle><circle r="2.671785" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="456.94992322327147" cy="601.9345673073495"><title>beach</title></circle><circle r="2.617803980968781" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="421.8378130494874" cy="603.6694385441557"><title>maximum</title></circle><circle r="2.617803980968781" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="390.46201862215764" cy="605.9205444909561"><title>worldmark</title></circle><circle r="2.5063564941719685" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="437.1161120916578" cy="606.7443224571896"><title>urban</title></circle><circle r="2.5063564941719685" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="344.5053049366551" cy="605.3328185780923"><title>short</title></circle><circle r="2.4487314006295176" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="483.85468780903835" cy="586.236877215796"><title>center</title></circle><circle r="2.4487314006295176" fill="rgb(255, 251, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="373.89045633117564" cy="606.4066471753239"><title>near</title></circle><circle r="2.329208162773564" fill="rgb(255, 252, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="448.0414219135899" cy="589.7594993020903"><title>students</title></circle><circle r="2.329208162773564" fill="rgb(255, 252, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="466.54056206449525" cy="582.7154164867893"><title>cozy</title></circle><circle r="2.329208162773564" fill="rgb(255, 252, 0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cx="360.2375539102866" cy="599.024565338256"><title>master</title></circle></g></svg><content class="force-legend"><svg class="force-key" height="40" width="600"><g class="legend" transform="translate(0, 20)"><text class="title">chart key</text><text class="color-description" x="80">Mentions of word in listing:</text><g class="color-scale" transform="translate(265,-10)"><g class="axisHorizontal-legend" transform="translate(0, 0)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,10V0.5H150.5V10"></path><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#000" y2="10" x1="0.5" x2="0.5"></line><text fill="#000" y="13" x="0.5" dy="0.71em">0</text></g><g class="tick" opacity="1" transform="translate(50,0)"><line stroke="#000" y2="10" x1="0.5" x2="0.5"></line><text fill="#000" y="13" x="0.5" dy="0.71em">500</text></g><g class="tick" opacity="1" transform="translate(100,0)"><line stroke="#000" y2="10" x1="0.5" x2="0.5"></line><text fill="#000" y="13" x="0.5" dy="0.71em">1,000</text></g><g class="tick" opacity="1" transform="translate(150,0)"><line stroke="#000" y2="10" x1="0.5" x2="0.5"></line><text fill="#000" y="13" x="0.5" dy="0.71em">1,500</text></g></g><rect class="key-rect-bar" height="8" width="25" x="0" fill="rgb(255, 255, 0)"></rect><rect class="key-rect-bar" height="8" width="25" x="25" fill="rgb(255, 213, 0)"></rect><rect class="key-rect-bar" height="8" width="25" x="50" fill="rgb(255, 170, 0)"></rect><rect class="key-rect-bar" height="8" width="25" x="75" fill="rgb(255, 128, 0)"></rect><rect class="key-rect-bar" height="8" width="25" x="100" fill="rgb(255, 85, 0)"></rect><rect class="key-rect-bar" height="8" width="25" x="125" fill="rgb(255, 43, 0)"></rect></g><g class="circle-keys" transform="translate(450,0)"><g class="circle-key-individual" transform="translate(0,0)"><circle r="7" fill="blue" cx="100"></circle><text x="-5">Neighborhood</text></g><g class="circle-key-individual" transform="translate(50,0)"><circle r="7" fill="red" cx="100"></circle><text x="-5">Word</text></g></g></g></svg></content></content></div></div>
+
+<div class="ReactModalPortal"><div data-reactroot=""></div></div><div class="d3-tip" style="position: absolute; top: 0px; opacity: 0; pointer-events: none; box-sizing: border-box;"></div><div class="d3-tip n" style="position: absolute; top: 501.468px; opacity: 0; pointer-events: none; box-sizing: border-box; left: 488.613px;"><div class="tool-tip-box"><div class="node-name">District</div><div class="freq">Frequency:573</div><div class="tt-tail"></div></div></div></body></html>

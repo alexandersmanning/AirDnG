@@ -97,7 +97,7 @@ ul, li, h1, h2, h3, h4, span {
 
     .axisHorizontal .tick line {
         stroke-width: 1;
-        stroke: rgba(0, 0, 0, 0.2);
+        stroke: rgba(0,   0, 0, 0.2);
     }
 
     .bar {
@@ -148,8 +148,8 @@ ul, li, h1, h2, h3, h4, span {
 }
 
 .sidebar {
-  height: calc(100vh - 50px);
-  width: 29%;
+  height: calc(100vh - 66px);
+  width: 32.9%;
   float: right;
   padding: 0;
   border-left: lightgrey solid 1px;
@@ -163,22 +163,32 @@ ul, li, h1, h2, h3, h4, span {
 }
 
 .main {
-  height: calc(100vh - 50px);
-  width: 70.9%;
+  height: calc(100vh - 66px);
+  width: 67%;
   float: left;
   text-align: center;
 }
 
 .header-logo {
   margin: 0;
-  padding-top: 10px;
-  padding-left: 10px;
 }
 
 .main-nav-bar {
   margin: 0;
-  height: 50px;
+  height: 65px;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
 }
 
 .main-title {
@@ -190,17 +200,13 @@ ul, li, h1, h2, h3, h4, span {
 
 .filter-container {
   width: 100%;
-  /*background-color: #e6e6e6;*/
-  /*border-bottom: 1px solid lightgrey;*/
   height: 130px;
   position: absolute;
   box-shadow: 0px 1px 3px #aaaaaa;
-  /*opacity: 0.8;*/
-
 }
 
 .Select {
-  width: 90%;
+  width: 95%;
   left: 10px;
   right: 10px;
   top: 30px;
@@ -265,4 +271,92 @@ ul, li, h1, h2, h3, h4, span {
   margin-bottom: 20px;
   margin-top: 20px;
   font-size: 2em;
+}
+
+.ReactModal__Content--after-open {
+    width: 500px;
+    height: 625px;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: width 1000ms ease-in;
+ }
+
+ .ReactModal__Overlay--after-open {
+  z-index: 500 !important;
+ }
+
+.user-pic {
+  width: 30%;
+  margin: auto;
+}
+
+.about-text {
+  font-family: 'Sailec Regular', sans-serif;
+  margin: 5px;
+  padding: 5px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.about-title {
+  font-family: 'Sailec Regular', sans-serif;
+  margin: 5px;
+  margin-top: 15px;
+  padding: 5px;
+  text-align: center;
+}
+
+.about-header {
+  cursor: pointer;
+}
+
+.header-modals {
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; 
+}
+
+.force-legend {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.axisHorizontal-legend text {
+  font-size: 10px;
+}
+
+.axisHorizontal-legend path{
+  fill: none;    
+}
+
+.axisHorizontal-legend .domain{
+  stroke: none;    
+}
+
+.axisHorizontal-legend .tick line {
+  stroke-width: 1;
+  stroke: rgba(0,   0, 0, 0.2);
+}
+
+.legend text {
+  font-size: 12px;
+}
+
+.force-title {
+  position: fixed;
+  top: 95px;
+  left: 10px;
+}
+
+.force-legend {
+  margin-left: 10px;
 }

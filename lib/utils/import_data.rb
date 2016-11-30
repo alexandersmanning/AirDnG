@@ -159,7 +159,8 @@ IGNORE_WORDS = {
  "min" => true,
  "newly" => true,
  "enjoy" => true,
- "many" => true
+ "many" => true,
+ "each" => true,
 }
 
 PHRASES = [
@@ -197,7 +198,10 @@ PHRASES = [
   "for mason",
   "cow hollow",
   "palace of fine arts",
-  "nob hill"
+  "nob hill",
+  "back yard",
+  "coit tower",
+  "north beach"
 ]
 
 def parse_file(file_name)

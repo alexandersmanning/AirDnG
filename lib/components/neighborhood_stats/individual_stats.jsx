@@ -23,7 +23,7 @@ class IndividualStats extends React.Component {
 		return (
 			<div className="individual-stats-container">
 				<div className="graph-container">
-					<h3 className="graph-title">Room Type</h3>
+					<h3 className="graph-title">Listing by House/Room Type</h3>
 					<svg ref="bargraph" className="bar-graph">
 					</svg>
 				</div>

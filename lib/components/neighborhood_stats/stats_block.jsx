@@ -8,7 +8,7 @@ const StatsBlock = ({stats}) => (
 				</span>
 			</div>
 			<div className="stats-title">
-				<span>Average Rental Price</span>
+				<span>Average Cost/Day</span>
 			</div>
 			<div className="stats-secondary-metric">
 				<span className="stats-metric">
@@ -16,7 +16,7 @@ const StatsBlock = ({stats}) => (
 				</span>
 			</div>
 			<div className="stats-title">
-				<span>Median Rental Price</span>
+				<span>Median Cost/Day</span>
 			</div>
 			<div className="stats-secondary-metric">
 				<span className="stats-metric">
