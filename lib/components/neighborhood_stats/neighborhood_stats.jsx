@@ -16,7 +16,7 @@ class NeighborhoodStats extends React.Component {
 				<h1 className="stats-container-title">Statistics by Neighborhood</h1>
 				<ul className="neighborhood-list">
 				{
-					Object.keys(this.props.statsList).map( el => {
+					Object.keys(this.props.statsList).sort().map( el => {
 						return( 
 							<li className="stats-item-data">
 								<h2 className="neighborhood-name">{el}</h2>

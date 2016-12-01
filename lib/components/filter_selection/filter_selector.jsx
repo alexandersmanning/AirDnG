@@ -31,7 +31,7 @@ class FilterSelector extends React.Component {
 	}
 
 	getNeighborhoods(neighborhoodList) {
-		return neighborhoodList.map(el => {
+		return neighborhoodList.sort().map(el => {
 			return {value: el, label: el}
 		})
 	}
