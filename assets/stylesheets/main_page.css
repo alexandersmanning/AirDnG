@@ -367,3 +367,19 @@ ul, li, h1, h2, h3, h4, span {
     width: 100%;
   }
 }
+
+.no-data{
+  margin: auto;
+  /*width: 128px;*/
+  margin-top: 50px;
+  text-align: center;
+}
+
+.no-data-text {
+  margin: 15px;
+  /*font-size: 20px;*/
+}
+
+.about-header:hover {
+  color:#006bcc;
+}

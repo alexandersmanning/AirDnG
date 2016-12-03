@@ -1,3 +1,4 @@
+
 module.exports = {
   context: __dirname,
   entry: "./lib/airdng.js",
@@ -22,6 +23,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.gif$/,
+        loader: 'file'
       }
     ]
   },

@@ -30,7 +30,7 @@ const App = () => {
 			<content className="main">
 				<div className="force-title">
 						<h2 className="force-title-one">Words Used in Listings</h2>
-						<h2 className="force-title-one">by Neighborhood</h2>					
+						<h2 className="force-title-one">by Neighborhood</h2>		
 					</div>
 				<ForceGraphContainer />
 				<content className="force-legend">
