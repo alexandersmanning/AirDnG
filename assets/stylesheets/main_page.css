@@ -276,10 +276,11 @@ ul, li, h1, h2, h3, h4, span {
 
 .ReactModal__Content--after-open {
     width: 500px;
-    height: 625px;
+    /*height: 625px;*/
     margin: 0 auto;
-    margin-top: 50px;
+/*    margin-top: 50px;*/
     transition: width 1000ms ease-in;
+    overflow: auto;
  }
 
  .ReactModal__Overlay--after-open {
