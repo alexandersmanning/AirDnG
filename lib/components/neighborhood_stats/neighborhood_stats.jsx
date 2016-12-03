@@ -5,10 +5,15 @@ import IndividualStats from './individual_stats'
 class NeighborhoodStats extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = { width: 0 }
+	}
+
+	_updateWidth() {
+		this.setState({width: document.getElementById("sidebar").offsetWidth})
 	}
 
 	componentDidMount() {
-		// window.addEventListener('resize', () => this.forceUpdate())
+		window.addEventListener('resize', this._updateWidth.bind(this) )
 	}
 
 	render() {

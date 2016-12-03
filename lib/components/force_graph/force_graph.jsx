@@ -18,10 +18,6 @@ class ForceGraph extends React.Component {
 		createForceGraph(this.props.wordList, ReactDOM.findDOMNode(this))
 	}	
 
-	componentWillUnmount() {
-     window.removeEventListener('resize', () => this.forceUpdate());
-	}
-
 	render() {
 		if (Object.keys(this.props.wordList).length === 0) {
 			this.props.getWordList();

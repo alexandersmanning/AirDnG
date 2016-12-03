@@ -20,7 +20,7 @@ const App = () => {
 					<NotesModal />
 				</div>
 			</header>
-			<aside className="sidebar">
+			<aside id="sidebar" className="sidebar">
 				<div className="filter-container">
 					<span className="filter-label">filter by neighborhood</span>
 					<FilterSelectorContainer/>
