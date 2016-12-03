@@ -7,6 +7,10 @@ class NeighborhoodStats extends React.Component {
 		super(props)
 	}
 
+	componentDidMount() {
+		// window.addEventListener('resize', () => this.forceUpdate())
+	}
+
 	render() {
 		let statsItems;
 
@@ -33,7 +37,7 @@ class NeighborhoodStats extends React.Component {
 					<h1 className="stats-container-title">Please Select One or More Neighborhoods Above</h1>
 
 					<div className="no-data">
-						<img className="no-data-img" src="https://res.cloudinary.com/ddvdi1pie/image/upload/v1480751564/connection_2_izkgfg.png"/>
+						<img className="no-data-img" src="https://res.cloudinary.com/ddvdi1pie/image/upload/v1480797309/network_ma67kw.png"/>
 					</div>
 				</div>	
 		}

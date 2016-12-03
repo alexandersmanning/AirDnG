@@ -9,15 +9,16 @@ class IndividualStats extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('resize', () => this.forceUpdate())
+		
 		if (Object.keys(this.props.stats).length !== 0) {
 			createSidewaysGraph(this.props.stats, ReactDOM.findDOMNode(this.refs.bargraph))
+			window.addEventListener('resize', () => this.forceUpdate())
 		}
 	}
 
 	componentWillUnmount() {
-        window.removeEventListener("resize", () => this.forceUpdate());
-    }
+      window.removeEventListener("resize", () => this.forceUpdate());
+  }
 
 	componentDidUpdate() {
 		createSidewaysGraph(this.props.stats, ReactDOM.findDOMNode(this.refs.bargraph))
