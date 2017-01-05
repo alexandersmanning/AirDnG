@@ -1,6 +1,7 @@
 require 'csv'
 require 'json'
 require 'byebug'
+require 'mongo'
 
 IGNORE_WORDS = {
  "and"=>true,
@@ -161,6 +162,10 @@ IGNORE_WORDS = {
  "enjoy" => true,
  "many" => true,
  "each" => true,
+ "here" => true,
+ "like" => true,
+ "back" => true,
+ "while" => true
 }
 
 PHRASES = [
@@ -201,7 +206,8 @@ PHRASES = [
   "nob hill",
   "back yard",
   "coit tower",
-  "north beach"
+  "north beach",
+  "back yard"
 ]
 
 def parse_file(file_name)
@@ -232,12 +238,37 @@ def description_to_dictionary(listings)
       word_list[neighborhood][word] += 1
     end
   end
-  #how do I get the number of ads?!
   word_list
 end
 
 def clean_text(entry_description)
-  entry_description.gsub(/[\.\,\:\-\/\(\)\!\?]+/,'').downcase
+  entry_description.gsub(/[\.\,\:\-\/\(\)\!\?\$]+/,'').downcase
+end
+
+def top_100(word_list)
+  limited_list = Hash.new()
+  word_list.keys.each do |neighborhood|
+    limited_list[neighborhood] = word_list[neighborhood].sort_by { |k,v| v }.reverse.first(100).to_h
+  end
+
+  limited_list
+end
+
+def write_to_table(word_list, city)
+  byebug
+  Mongo::Logger.logger.level = ::Logger::FATAL
+  client = Mongo::Client.new(['127.0.0.1:27017'], database: 'air_word_list')
+  word_list.keys.each do |neighborhood|
+    doc = client[:wordlist].find('City': city,'Neighborhood': neighborhood)
+    unless (doc.count == 0)
+      doc.update_one('$set': {'Words': word_list[neighborhood]})
+    else
+      item = {_id: BSON::ObjectId.new, 'City': city, 'Neighborhood': neighborhood, 'Words': word_list[neighborhood]}
+      client[:wordlist].insert_one(item)
+    end
+  end
+
+  client.close
 end
 
 
