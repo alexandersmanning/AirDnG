@@ -165,7 +165,11 @@ IGNORE_WORDS = {
  "here" => true,
  "like" => true,
  "back" => true,
- "while" => true
+ "while" => true,
+ "want" => true,
+ "lots" => true,
+ "entire" => true,
+ "city" => true
 }
 
 PHRASES = [
@@ -207,8 +211,29 @@ PHRASES = [
   "back yard",
   "coit tower",
   "north beach",
-  "back yard"
+  "back yard",
+  "haight ashburry",
+  "inner sunset",
+  "outer sunset",
+  "down town",
+  "castro theater",
+  "public parking",
+  "heart of the city",
+  "bay area",
+  "the bay area"
 ]
+
+TRANSLATE = {
+  "gg bridge" => "golden gate bridge",
+  "gg park" => "golden gate park",
+  "back yard" => "backyard",
+  "mission" => "the mission",
+  "haightashburry" => "haight ashburry",
+  "the haight" => "haight",
+  "castro" => "the castro",
+  "down town" => "downtown",
+  "bay area" => "the bay area"
+}
 
 def parse_file(file_name)
   text = File.read(file_name)
@@ -235,6 +260,7 @@ def description_to_dictionary(listings)
                      .delete_if(&:empty?)
                      .each do |word|
       next if IGNORE_WORDS[word]
+      word = TRANSLATE[word] || word
       word_list[neighborhood][word] += 1
     end
   end
