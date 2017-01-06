@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family:  sans-serif;;
 }
 
 ul, li, h1, h2, h3, h4, span {
@@ -302,6 +302,7 @@ ul, li, h1, h2, h3, h4, span {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  margin: 20px;
 }
 
 .about-title {
@@ -358,6 +359,19 @@ ul, li, h1, h2, h3, h4, span {
   position: absolute;
   left: 15px;
   top: 15px;
+}
+
+.about-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   height: 100%;
+}
+
+.link-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 @media all and (max-width: 1000px) {

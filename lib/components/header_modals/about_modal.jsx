@@ -20,7 +20,7 @@ class AboutModal extends React.Component {
 	render() {
 		return (<section>
 					<span 
-						className="about-header"
+						className="about-footer"
 						onClick={this.openModal}
 					>
 						About the Developer
@@ -31,14 +31,35 @@ class AboutModal extends React.Component {
 						<content className="about-container">
 							<section className="about-section">
 								<h2 className="about-title">Alex Manning</h2>
-								<img className="user-pic" src="http://res.cloudinary.com/ddvdi1pie/image/upload/c_scale,h_403/v1478745746/Manning_oegwmi.jpg"/>
 								<p className="about-text">
-									I am a former Industrial Engineering Manager who decided to pursue my true passion of programming and data analysis. I am currently looking for a Junior Developer position where I can apply my programming skills to any, and all, problems that can be thrown at me.</p>
-
-								<p className="about-text">This data analysis and visualization of AirBnB's listings was done as a solo "flex" project for App Academy. I originally started to teach myself programming on my free time, since I wanted to find new avenues for properly presenting data I analyzed as an engineer. I found in my previous role, that people did not always gain a lot from graphs and data, since there was so much information presented at once, and very little need for interaction.</p>
-
-								<p className="about-text">The hope of this project is to allow people to play around with the graph, given its interactive nature, and hoepfully discover more than they would at a quick glance.
+									Alex is a former Industrial Engineering Manager who decided to pursue is true passion of programming and data analysis. AirDnG was originally written as a "flex" project for App Academy. He is currently looking for a Software Developer position where he can apply his programming skills to any, and all, problems that can be thrown at him.
 								</p>
+							</section>
+							<img className="user-pic" src="http://res.cloudinary.com/ddvdi1pie/image/upload/c_scale,h_403/v1478745746/Manning_oegwmi.jpg"/>
+							<section className="about-section">
+							<h2 className="about-title">Let's work together</h2>
+								<div className="link-group">
+									<a className="contact-link" 
+										href="http://www.alexandersmanning.com" 
+										target="_blank">
+										<img className="contact-image" src="https://res.cloudinary.com/ddvdi1pie/image/upload/c_scale,w_64/v1483404603/globe-icon-7894_qsnj9j.png" alt="Portfolio"/>
+									</a>
+									<a className="contact-link" 
+										href="https://github.com/alexandersmanning" 
+										target="_blank">
+										<img className="contact-image" src="https://res.cloudinary.com/ddvdi1pie/image/upload/v1481004816/github-logo_avulo9.png" alt="Github"/>
+									</a>
+									<a className="contact-link" 
+										href="https://angel.co/alexandersmanning" 
+										target="_blank">
+										<img className="contact-image" src="https://res.cloudinary.com/ddvdi1pie/image/upload/c_scale,w_64/v1481006209/69-angellist-128_hai6eu.png" alt="Angel List"/>
+									</a>
+									<a className="contact-link" 
+											href="https://www.linkedin.com/in/alexandersmanning/" 
+											target="_blank">
+											<img className="contact-image" src="https://res.cloudinary.com/ddvdi1pie/image/upload/v1481004820/linkedin-logo_ruddep.png" alt="LinkedIn"/>
+									</a>
+								</div>
 							</section>
 						</content>
 					</Modal>
