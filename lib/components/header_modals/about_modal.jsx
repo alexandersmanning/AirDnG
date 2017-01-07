@@ -20,7 +20,7 @@ class AboutModal extends React.Component {
 	render() {
 		return (<section>
 					<span 
-						className="about-footer"
+						className="about-header"
 						onClick={this.openModal}
 					>
 						About the Developer
@@ -28,6 +28,7 @@ class AboutModal extends React.Component {
 					<Modal 
 						isOpen={this.state.open} 
 						onRequestClose={this.closeModal}>
+						<span className="close-modal" onClick={this.closeModal}>X</span>
 						<content className="about-container">
 							<section className="about-section">
 								<h2 className="about-title">Alex Manning</h2>

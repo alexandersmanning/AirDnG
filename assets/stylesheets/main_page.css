@@ -206,6 +206,12 @@ ul, li, h1, h2, h3, h4, span {
   box-shadow: 0px 1px 3px #aaaaaa;
 }
 
+/*.filter-container:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+*/
 .Select {
   width: 95%;
   left: 10px;
@@ -372,6 +378,16 @@ ul, li, h1, h2, h3, h4, span {
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+.close-modal {
+  font-size: 25px;
+  float:right;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #FF0000
 }
 
 @media all and (max-width: 1000px) {
