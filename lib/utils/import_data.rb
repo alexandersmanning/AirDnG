@@ -283,7 +283,7 @@ end
 def write_to_table(word_list, city)
   byebug
   Mongo::Logger.logger.level = ::Logger::FATAL
-  client = Mongo::Client.new(['127.0.0.1:27017'], database: 'air_word_list')
+  client = Mongo::Client.new("#{process.env.DB}")
   word_list.keys.each do |neighborhood|
     doc = client[:wordlist].find('City': city,'Neighborhood': neighborhood)
     unless (doc.count == 0)
