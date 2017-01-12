@@ -19,9 +19,9 @@ app.use("/styles",  express.static(__dirname + '/assets/stylesheets/'));
 app.use("/scripts", express.static(__dirname + '/lib/'));
 app.use("/images",  express.static(__dirname + '/assets/images/'));
 app.use('/', index);
-// app.use('/data', data)
+
 app.get('/data/:list', (req, res) => {
-	let param_list = {"$or": eval(req.params.list) }
+	let param_list = {"$or": eval(req.params.list.replace(/\-/g,"\/")) }
 	let cursor = db.collection('wordlist')
 			.find(param_list)
 			.toArray(function(err, results) {
