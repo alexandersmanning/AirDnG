@@ -28,6 +28,15 @@ app.get('/data/:list', (req, res) => {
 		if (err) { return console.log(err) }
 		res.json(results);
 	})
+});
+
+app.get('/neighborhoods', (req, res) => {
+	let cursor = db.collection('wordlist')
+			.find({}, {"Neighborhood": 1})
+			.toArray(function(err, results){
+				if(err) { return console.log(err) }
+				res.json(results);
+	});
 })
 
 module.exports = app;

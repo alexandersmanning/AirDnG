@@ -2,6 +2,8 @@ require 'csv'
 require 'json'
 require 'byebug'
 require 'descriptive_statistics'
+require 'mongo'
+require 'dotenv'
 
 def parse_file(file_name)
   text = File.read(file_name)
@@ -55,13 +57,13 @@ def update_hash(neighborhood_hash, entry)
 end
 
 def statistics_by_neighborhood(listing_breakdown)
-  byebug
   listing_breakdown.keys.each do |neighborhood|
     set_stats(listing_breakdown[neighborhood])
 
     [:entire_house, :private_room,:shared_room].each do |room_type|
       neighborhood_hash =  listing_breakdown[neighborhood][room_type]
       set_stats(neighborhood_hash)
+      listing_breakdown[neighborhood].delete(:price)
     end
   end
 
@@ -75,6 +77,7 @@ def set_stats(neighborhood_hash)
   neighborhood_hash[:twenty_fifth] = price.percentile(25)
   neighborhood_hash[:seventy_fifth] = price.percentile(75)
   neighborhood_hash[:std_dev] = price.standard_deviation
+  neighborhood_hash.delete(:price)
 end
 
 def write_list(list, file_location)
@@ -82,4 +85,22 @@ def write_list(list, file_location)
     f.write(list.to_json)
   end
 end
+
+def write_to_table(stats_list, city)
+  byebug
+  Mongo::Logger.logger.level = ::Logger::FATAL
+  client = Mongo::Client.new("{data.env}")
+  stats_list.keys.each do |neighborhood|
+    doc = client[:wordlist].find('City': city,'Neighborhood': neighborhood)
+    unless (doc.count == 0)
+      doc.update_one('$set': {'Stats': stats_list[neighborhood]})
+    else
+      item = {_id: BSON::ObjectId.new, 'City': city, 'Neighborhood': neighborhood, 'Stats': stats_list[neighborhood]}
+      client[:wordlist].insert_one(item)
+    end
+  end
+
+  client.close
+end
+
 
