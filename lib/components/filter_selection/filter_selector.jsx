@@ -2,14 +2,20 @@ import React from 'react';
 import 'react-select/dist/react-select.css';
 import Select from 'react-select';
 
-import { getListOfNeighborhoods } from '../../utils/analyze_data'
+import { getListOfNeighborhoods } from '../../utils/analyze_data';
+import { NeighborhoodAPI } from '../../utils/force_diagram_api';
 
 class FilterSelector extends React.Component {
 	constructor(props){
 		super(props);
-		this.options = this.getNeighborhoods(getListOfNeighborhoods())
-
-		this.state = { selected: this.getNeighborhoods(this.props.filter["neighborhoods"]) }
+		NeighborhoodAPI((results) => { 
+			this.setState({
+				options: this.getNeighborhoods(eval(results).map(el => {
+						return el["Neighborhood"]
+					}))
+			}); 
+		});
+		this.state = { selected: this.getNeighborhoods(this.props.filter["neighborhoods"]), options: [] }
 	}
 
 	componentDidUpdate() {
@@ -49,7 +55,7 @@ class FilterSelector extends React.Component {
 			    name="form-field-name"
 			    value={this.state["selected"]}
 			    multi={true}
-			    options={this.options}
+			    options={this.state["options"]}
 			    onChange={this.logChange.bind(this)}
 			    placeholder="Select Neighborhoods To Compare"
 				/>

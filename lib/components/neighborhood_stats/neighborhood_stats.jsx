@@ -1,6 +1,5 @@
 import React from 'react';
 import IndividualStats from './individual_stats'
-// const src = require('../../../assets/images/linegraph.gif');
 
 class NeighborhoodStats extends React.Component {
 	constructor(props) {
@@ -19,7 +18,6 @@ class NeighborhoodStats extends React.Component {
 
 	render() {
 		let statsItems;
-
 		if (Object.keys(this.props.statsList).length !== 0) {
 			statsItems = 
 				<div className="stats-container">
@@ -37,7 +35,7 @@ class NeighborhoodStats extends React.Component {
 						}
 						</ul>
 				</div>
-		} else {
+		} else if (this.props.filter["neighborhoods"].length === 0) {
 			statsItems = 
 				<div className="stats-container">
 					<h1 className="stats-container-title">Please Select One or More Neighborhoods Above</h1>
@@ -46,6 +44,11 @@ class NeighborhoodStats extends React.Component {
 						<img className="no-data-img" src="https://res.cloudinary.com/ddvdi1pie/image/upload/v1480797309/network_ma67kw.png"/>
 					</div>
 				</div>	
+		} else {
+			statsItems = 
+				<div className="stats-container">
+						<h1 className="stats-container-title">Statistics by Neighborhood</h1>
+				</div>
 		}
 
 		return statsItems
