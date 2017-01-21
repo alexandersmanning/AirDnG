@@ -4,7 +4,8 @@
   "description": "## About AirDnG provides data visualization of common words and phrased used in AirBnB posts, using the D3 library to create different graphs based on neighborhood and area",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
   },
   "repository": {
     "type": "git",
