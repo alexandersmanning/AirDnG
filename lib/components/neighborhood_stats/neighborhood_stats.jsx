@@ -11,9 +11,8 @@ class NeighborhoodStats extends React.Component {
 		this.setState({width: document.getElementById("sidebar").offsetWidth})
 	}
  
- componentDidUpdate() {
+ componentDidMount() {
 		window.addEventListener('resize', this._updateWidth.bind(this) )
-
 	}
 
 	render() {
